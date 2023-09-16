@@ -4,7 +4,58 @@
     padding: 0px;
 }
 
+/* Page body */
+.background {
+    /* Background image */
+    background-image: linear-gradient(to bottom right, lightgreen, green);
+    /* Set a specified height, or the minimum height for the background image */
+    min-height: 500px;
+
+    /* Set background image to fixed (don't scroll along with the page) */
+    background-attachment: fixed;
+
+    /* Center the background image */
+    background-position: center;
+
+    /* Set the background image to no repeat */
+    background-repeat: no-repeat;
+
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
+}
+
+/* Homepage background */
+.fixed-bg {
+    /* The background image */
+    background-image: linear-gradient(to bottom right, whitesmoke, antiquewhite);
+
+    /* Set a specified height, or the minimum height for the background image */
+    min-height: 300px;
+
+    /* Set background image to fixed (don't scroll along with the page) */
+    background-attachment: absolute;
+
+    /* Center the background image */
+    background-position: center;
+
+    /* Set the background image to no repeat */
+    background-repeat: no-repeat;
+
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
+}
+
+.card_border {
+    border: 3px solid black;
+}
+
 .profile_pic {
-    height: 200px;
+    height: 230px;
     width: 100%;
+}
+
+/* Icon Images */
+.icons {
+    height: 50px;
+    max-width: 100%;
 }

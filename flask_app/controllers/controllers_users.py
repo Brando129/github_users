@@ -5,7 +5,7 @@ from pprint import pprint
 
 # Get Routes
 # Route for rendering the Index Page.
-@app.get('/index')
+@app.get('/')
 def index_page():
     return render_template('index.html')
 
@@ -25,13 +25,47 @@ def search_user_name():
 
     pprint(response.json())
 
-    session['location'] = response.json()['location']
-    session['hireable'] = response.json()['hireable']
-    session['login'] = response.json()['login']
+    if response.json()['location'] == None:
+        session['location'] = "Not Available"
+    else:
+        session['location'] = response.json()['location']
+    if response.json()['hireable'] == None:
+        session['hireable'] = "Not Available"
+    else:
+        session['hireable'] = response.json()['hireable']
+    if response.json()['login'] == None:
+        session['login'] = 'Not Available'
+    else:
+        session['login'] = response.json()['login']
     session['image'] = response.json()['avatar_url']
-    session['name'] = response.json()['name']
-    session['bio'] = response.json()['bio']
-    session['blog'] = response.json()['blog']
-    session['created_at'] = response.json()['created_at']
+    if response.json()['name'] == None:
+        session['name'] = "Nameless"
+    else:
+        session['name'] = response.json()['name']
+    if response.json()['bio'] == None:
+        session['bio'] = 'Not Available'
+    else:
+        session['bio'] = response.json()['bio']
+    if response.json()['blog'] == '':
+        session['blog'] = "Not Available"
+    else:
+        session['blog'] = response.json()['blog']
+    if response.json()['public_repos'] == 0:
+        session['repos'] = "Not Available"
+    else:
+        session['repos'] = response.json()['public_repos']
+    if response.json()['followers'] == 0:
+        session['followers'] = "No Followers"
+    else:
+        session['followers'] = response.json()['followers']
+    if response.json()['company'] == None:
+        session['company'] = "Not Available"
+    else:
+        session['company'] = response.json()['company']
+    if response.json()['twitter_username'] == None:
+        session['twitter'] = "Not Available"
+    else:
+        session['twitter'] = response.json()['twitter_username']
+    # session['created_at'] = response.json()['created_at']
 
     return redirect('/user_page')
