@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>{{ session.name }}'s Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card col-md-6 mx-auto p-3 border border-warning">
+            <div class="d-flex justify-content-around align-items-center my-2 border border-danger">
+                <h3>{{ session.location }}</h3>
+                <h3>Github card</h3>
+            </div>
+            <div class="d-flex border border-success">
+                <div class="border border-info">
+                    <img class="profile_pic" src="{{ session.image }}" alt="{{ session.name }}'s profile picture">
+                    <h4 class="text-center my-2">{{ session.login }}</h4>
+                </div>
+                <div class="mx-2 border border-black">
+                    <h5>{{ session.name }}</h5>
+                    <!-- <h6>{{ session.location }}</h6> -->
+                    <p><strong>Location:</strong>{{ session.location }}</p>
+                    <p><strong>Hireable:</strong>{{ session.hireable }}</p>
+                    <p><strong>Website:</strong>{{ session.blog }}</p>
+                    <!-- <h6>{{ session.blog }}</h6> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
