@@ -10,10 +10,13 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Index</title>
 </head>
-<body>
-    <form action="/search/user_name" method="POST">
-        <input type="text" name="user_name" placeholder="Search user...">
-        <input type="submit" value="Search">
-    </form>
+<body class="background">
+    <div class="flex-column col-md-6 mx-auto">
+        <img class="image mt-3" src="/static/img/github-logo.png" alt="Github logo">
+        <form class="text-center my-5" action="/search/user_name" method="POST">
+            <input style="background-color: antiquewhite; color: black; padding: 5px;" type="text" name="user_name" placeholder="Search user...">
+            <input style="background-color: antiquewhite; color: black; padding: 5px;" type="submit" value="Search">
+        </form>
+    </div>
 </body>
 </html>

@@ -59,3 +59,8 @@
     height: 50px;
     max-width: 100%;
 }
+
+.image {
+    height: 600px;
+    width: 100%;
+}
